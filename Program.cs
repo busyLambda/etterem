@@ -1,14 +1,16 @@
 ﻿class Program {
     public static void Main(string[] args) {
-        Guest guest = new("Guest");
+        Guest guest = new("Kiss Peter");
         
+        MenuElem burger = new("cheeseburger", 1500, "food");
+        MenuElem coke = new("coke", 500, "drink");
+
         Restaraunt restaraunt = new();
 
-        MenuElem langos = new("langos", 1550, "traditional");
-
-        restaraunt.AddMenuItem(langos);
+        restaraunt.AddMenuItem(burger);
+        restaraunt.AddMenuItem(coke);
         
-        restaraunt.OrderItem(guest, new([langos]));
+        restaraunt.OrderItem(guest, new([burger, coke]));
         
         restaraunt.Pay(guest);
     }

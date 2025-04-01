@@ -3,7 +3,10 @@ class MenuElem {
     public int price;
     string category;
     
-    
+    public string ToString() {
+        return $"{name}:{price}Ft | {category}";
+    }
+
     public string Name() {
         return name;
     }

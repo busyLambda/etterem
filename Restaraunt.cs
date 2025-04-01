@@ -6,6 +6,13 @@ class Restaraunt {
     List<Order> orders;
     FileManager fileManager;
     
+    public void ListMenu() {
+        foreach (var item in menu)
+        {
+            Console.WriteLine(item.ToString());
+        }
+    }
+    
     public Restaraunt() {
         fileManager = new();
 
