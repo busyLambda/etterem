@@ -53,9 +53,16 @@ class FileManager
         List<Order> orders = new([]);
 
         string contents = File.ReadAllText("orders.txt");
+        
+        if (contents == "") {
+            return orders;
+        }
 
         foreach (var line in contents.Split("\n"))
         {
+            if (line == "") {
+                continue;
+            }
             string[] fields = line.Split(";");
 
             string name = fields[0];
@@ -105,9 +112,17 @@ class FileManager
         List<MenuElem> menu = new([]);
 
         string contents = File.ReadAllText("menu.txt");
+        
+        if (contents == "") {
+             return menu;
+        }
 
         foreach (var line in contents.Split("\n"))
         {
+            if (line == "") {
+                continue;
+            }
+
             string[] fields = line.Split(";");
 
             int price = Convert.ToInt32(fields[1]);
